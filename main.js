@@ -11,9 +11,8 @@ function getComputerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
-        return "It's a draw, nobody wins";
+        return "It's a draw, nobody gets a score";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         return "You Win! Rock beats Scissors";
     } else if (playerSelection === "rock" && computerSelection === "paper") {
@@ -33,8 +32,12 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let myScore = 0;
     let compScore = 0;
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Rock, Paper or Scissors?")
+    for (let i = 0; myScore <= 2 && compScore <= 2; i++) {
+        let playerSelection = prompt("Rock, Paper or Scissors?");
+        playerSelection = playerSelection.toLowerCase();
+        if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
+            continue;
+        }
         const computerSelection = getComputerChoice();
         let result = playRound(playerSelection, computerSelection);
         console.log(result);
