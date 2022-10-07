@@ -9,10 +9,8 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
-
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase;
+    playerSelection = playerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
         return "It's a draw, nobody wins";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -28,5 +26,14 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         return "You Win! Scissors beats Paper"
     }
-    
+}
+
+let playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        
+    }
 }
