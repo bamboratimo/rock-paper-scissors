@@ -9,6 +9,7 @@ function getComputerChoice() {
     }
 }
 
+
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
@@ -28,12 +29,27 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
 
 function game() {
+    let myScore = 0;
+    let compScore = 0;
     for (let i = 0; i < 5; i++) {
-        
-    }
+        let playerSelection = prompt("Rock, Paper or Scissors?")
+        const computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
+        console.log(result);
+        if (result.includes("Win")) {
+            myScore++;
+        } else if (result.includes("Lose")) {
+            compScore++;
+        }
+        console.log("My score: " + myScore + "\n" + "Computer score: " + compScore);
+        }
+        if (myScore === 3) {
+            console.log("You win!!!");
+        } else if (compScore === 3) {
+            console.log("Computer wins :(");
+        }
 }
+
+game();
