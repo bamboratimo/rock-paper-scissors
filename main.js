@@ -52,9 +52,9 @@ function game() {
         console.log("My score: " + myScore + "\n" + "Computer score: " + compScore);
         }
         if (myScore === 3) {
-            console.log("You win!!!");
+            console.log("You won the game!!!");
         } else if (compScore === 3) {
-            console.log("Computer wins :(");
+            console.log("Computer won the game:(");
         }
 }
 
