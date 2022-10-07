@@ -34,6 +34,9 @@ function game() {
     let compScore = 0;
     for (let i = 0; myScore <= 2 && compScore <= 2; i++) {
         let playerSelection = prompt("Rock, Paper or Scissors?");
+        if (playerSelection === null) {
+            return;
+        }
         playerSelection = playerSelection.toLowerCase();
         if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
             continue;
