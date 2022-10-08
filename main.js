@@ -54,7 +54,7 @@ function game() {
         if (myScore === 3) {
             console.log("You won the game!!!");
         } else if (compScore === 3) {
-            console.log("Computer won the game:(");
+            console.log("Computer won the game :(");
         }
 }
 
