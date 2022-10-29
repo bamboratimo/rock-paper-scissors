@@ -5,6 +5,8 @@ const roundResult = document.querySelector(".roundResult");
 const myPoints = document.querySelector(".myPoints");
 const compPoints = document.querySelector(".compPoints");
 const roundCount = document.querySelector(".roundCount");
+const myChoice = document.querySelector(".myChoice");
+const compChoice = document.querySelector(".compChoice");
 
 let rounds = 0;
 let myScore = 0;
@@ -20,10 +22,13 @@ scissors.addEventListener("click", game);
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
     if (choice === 0) {
+        compChoice.src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/904a8656-d025-458b-ab94-7335122cc9b9/dasxgjv-aadf4828-c1a7-4d36-ac3c-6ec4e402cf53.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkwNGE4NjU2LWQwMjUtNDU4Yi1hYjk0LTczMzUxMjJjYzliOVwvZGFzeGdqdi1hYWRmNDgyOC1jMWE3LTRkMzYtYWMzYy02ZWM0ZTQwMmNmNTMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.7qptcRp5A3OEmsIPvPibamZxFihxAWj38OQNnPrpgdg"
         return "rock"; 
     } else if (choice === 1) {
+        compChoice.src = "https://cdn.pixabay.com/photo/2017/02/01/12/23/hygiene-2030052_1280.png";
         return "paper";
     } else if (choice === 2) {
+        compChoice.src = "https://cdn.pixabay.com/photo/2012/04/01/17/24/scissors-23634_1280.png";
         return "scissors"
     }
 }
@@ -59,6 +64,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game(e) {
         playRound(e.target.className, getComputerChoice());
+        myChoice.src = e.target.src;
         myPoints.textContent = "My Score: " + myScore;
         compPoints.textContent = "Computer Score: " + compScore;
         rounds++;

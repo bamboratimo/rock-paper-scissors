@@ -24,6 +24,7 @@ body {
 
 .choices {
     display: flex;
+    justify-content: space-between;
 }
 
 .buttons {
@@ -50,4 +51,8 @@ img:hover {
 
 .myPoints, .compPoints {
     font-size: 1.8rem;
+}
+
+.myChoice, .compChoice {
+    visibility: hidden;
 }
