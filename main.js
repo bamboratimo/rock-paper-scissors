@@ -29,6 +29,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
+/*
 function game() {
     let myScore = 0;
     let compScore = 0;
@@ -57,5 +58,6 @@ function game() {
             console.log("Computer won the game :(");
         }
 }
+*/
 
 game();
