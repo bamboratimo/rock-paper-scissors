@@ -4,7 +4,9 @@ const scissors = document.querySelector(".scissors");
 const roundResult = document.querySelector(".roundResult");
 const myPoints = document.querySelector(".myPoints");
 const compPoints = document.querySelector(".compPoints");
+const roundCount = document.querySelector(".roundCount");
 
+let rounds = 0;
 let myScore = 0;
 let compScore = 0;
 
@@ -28,24 +30,26 @@ function getComputerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toUpperCase();
+    computerSelection = computerSelection.toUpperCase();
     if (playerSelection === computerSelection) {
         roundResult.textContent = "It's a draw, nobody gets a score";
-    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+    } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
         myScore++;
         roundResult.textContent = "You Win! " + playerSelection + " beats " + computerSelection;
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
+    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
         compScore++;
         roundResult.textContent = "You Lose! " + computerSelection + " beats " + playerSelection;
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
+    } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
         myScore++;
         roundResult.textContent = "You Win! " + playerSelection + " beats " + computerSelection;
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+    } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
         compScore++;
         roundResult.textContent = "You Lose! " + computerSelection + " beats " + playerSelection; 
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+    } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
         compScore++;
         roundResult.textContent = "You Lose! " + computerSelection + " beats " + playerSelection;
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
         myScore++;
         roundResult.textContent = "You Win! " + playerSelection + " beats " + computerSelection;
     }
@@ -56,7 +60,9 @@ function playRound(playerSelection, computerSelection) {
 function game(e) {
         playRound(e.target.className, getComputerChoice());
         myPoints.textContent = "My Score: " + myScore;
-        compPoints.textContent = "Computer Score " + compScore;
+        compPoints.textContent = "Computer Score: " + compScore;
+        rounds++;
+        roundCount.textContent = "Rounds: " + rounds;
         
         console.log("My score: " + myScore + "\n" + "Computer score: " + compScore);
         if (myScore === 3) {

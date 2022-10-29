@@ -20,7 +20,6 @@ body {
     display: flex;
     justify-content: space-evenly;
     font-size: 1.5rem;
-    background: red;
 }
 
 .choices {
@@ -31,6 +30,7 @@ body {
     display: flex;
     margin-top: auto;
     justify-content: space-between;
+    padding: 0 30px 100px 30px;
 }
 
 img {
@@ -39,10 +39,15 @@ img {
     cursor: pointer;
 }
 
+img:hover {
+    transform: scale(1.2);
+}
+
 .roundResult {
     font-size: 1.5rem;
     align-self: center;
 }
 
-.myPoints, .compPoints, .roundCount {
+.myPoints, .compPoints {
+    font-size: 1.8rem;
 }
