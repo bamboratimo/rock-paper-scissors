@@ -3,6 +3,7 @@
     padding: 0;
     font-family: monospace;
     color: #fff;
+    font-size: 16px;
 }
 
 body {
@@ -19,6 +20,10 @@ body {
 .scoreRound {
     display: flex;
     justify-content: space-evenly;
+    font-size: 1px;
+}
+
+.roundCount {
     font-size: 1.5rem;
 }
 
@@ -34,14 +39,14 @@ body {
     padding: 0 30px 100px 30px;
 }
 
-img {
+.rock, .paper, .scissors {
     width: 300px;
     height: 200px;
     cursor: pointer;
 }
 
-img:hover {
-    transform: scale(1.2);
+.rock:hover, .paper:hover, .scissors:hover {
+    transform: scale(1.1);
 }
 
 .roundResult {
@@ -54,5 +59,20 @@ img:hover {
 }
 
 .myChoice, .compChoice {
+    width: 200px;
+    height: 100px;
     visibility: hidden;
+    margin: 10px;
+    padding: 0 30px 100px 30px;
+
+}
+
+.myWrapper, .compWrapper {
+    text-align: center;
+}
+
+.header {
+    font-size: 4rem;
+    margin-top: -10rem;
+    text-align: center;
 }
